@@ -12,8 +12,8 @@
 				"port": 5432,
 				"driver": "PostgreSQL",
 				"name": "mypdfdatabase",
-				"database": "postgres",
-				"username": "postgres"
+				"database": "mypdfdatabase",
+				"username": "anyone"
 			}
 		]
 	}
