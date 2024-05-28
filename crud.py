@@ -47,10 +47,9 @@ def upload_pdf(db: Session, file: UploadFile, file_name: str):
         s3_client.upload_fileobj(
             file.file,
             BUCKET_NAME,
-            file_name,
-            ExtraArgs={'ACL': 'public-read'}
+            file_name
         )
-        file_url = f'https://{BUCKET_NAME}.s3.us-east-1.amazonaws.com/{file_name}'
+        file_url = f'https://{BUCKET_NAME}.s3.amazonaws.com/{file_name}'
         
         db_pdf = models.PDF(name=file.filename, selected=False, file=file_url)
         db.add(db_pdf)
